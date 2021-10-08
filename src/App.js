@@ -8,6 +8,7 @@ function App() {
   //! Creating a state
   // inputText is the actual value typed and setInputText is the function that allows to change the value , you can use the state anywhere in the app , wherever you want you can have it.
   const [inputText, setInputText] = useState("");
+  const [todos, setTodos] = useState([]);
 
   return (
     <div className="App">
@@ -21,7 +22,12 @@ function App() {
       </header>
 
       {/* Doing this gave us access to the value in the Form.js */}
-      <Form setInputText={setInputText}/> 
+      <Form
+        inputText={inputText}
+        todos={todos}
+        setTodos={setTodos}
+        setInputText={setInputText}
+      />
       <TodoList />
     </div>
   );

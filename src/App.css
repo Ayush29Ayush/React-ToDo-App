@@ -5,7 +5,7 @@
   }
   body {
     /* Applies on the complete body of the app */
-    background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+    background-image: linear-gradient(120deg, #4187d6 0%, #dd3bd5 100%);
     /* color: black; */
     color: white;
     font-family: "Poppins", sans-serif;
@@ -30,7 +30,7 @@
     background: white;
   }
   form button {
-    color: #ff6f47;
+    color: #4358b8;
     background: #f7fffe;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -117,7 +117,8 @@
     overflow: hidden;
   }
   select {
-    color: #ff6f47;
+    /* color: #ff6f47; */
+    color: #4358b8;
     font-family: "Poppins", sans-serif;
     cursor: pointer;
     width: 12rem;
@@ -129,7 +130,8 @@
     top: 0;
     right: 0;
     padding: 1rem;
-    background: #ff6f47;
+    /* background: #ff6f47; */
+    background: #4358b8;
     cursor: pointer;
     pointer-events: none;
   }
