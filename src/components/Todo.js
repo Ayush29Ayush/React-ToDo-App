@@ -1,6 +1,10 @@
 import React from "react";
 
-const Todo = ({ text }) => {
+const Todo = ({ text, todos, setTodos }) => {
+  //! Events
+  const deleteHandler = () => {
+
+  }
   return (
     <div className="todo">
       {/* <li className="todo-item">HEY GUYS</li> */}
