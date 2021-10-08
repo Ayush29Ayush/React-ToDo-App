@@ -7,7 +7,7 @@ const Form = ({ inputText, setInputText, todos, setTodos }) => {
     // console.log("Input just got changed")
     // console.log(e);
     // console.log(e.target);
-    console.log(e.target.value);
+    // console.log(e.target.value);
     setInputText(e.target.value);
   };
   const submitTodoHandler = (e) => {
