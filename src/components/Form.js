@@ -18,12 +18,21 @@ const Form = ({ inputText, setInputText, todos, setTodos }) => {
       ...todos,
       { text: inputText, completed: false, id: Math.random() * 1000 },
     ]);
+    //! after submitting , the input form state should go blank again
+    setInputText("");
   };
 
   return (
     <form>
       {/* <input type="text" className="todo-input" /> */}
-      <input onChange={inputTextHandler} type="text" className="todo-input" />
+
+      {/* value={inputText} os used so that the input form of the UI also goes blank when the input form state goes blank. So this is used to reflect the change in the input form state  */}
+      <input
+        value={inputText}
+        onChange={inputTextHandler}
+        type="text"
+        className="todo-input"
+      />
       <button onClick={submitTodoHandler} className="todo-button" type="submit">
         <i className="fas fa-plus-square"></i>
       </button>
