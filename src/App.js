@@ -18,10 +18,15 @@ function App() {
   //   console.log("hey");
   // }, []);
 
-  //Since we provide [todos], we are telling that everytime the todos state changes, run this function
-  useEffect(() => {
-    console.log("hey");
-  }, [todos]);
+  // //Since we provide [todos, status], we are telling that everytime the todos and status state changes, run this function
+  // useEffect(() => {
+  //   console.log("hey");
+  // }, [todos, status]);
+
+  //! UseEffect
+  useEffect(()=>{
+    filterHandler();
+  }, [todos,status])
 
   //! Functions and events
   const filterHandler = () => {
