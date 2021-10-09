@@ -23,6 +23,11 @@ function App() {
   //   console.log("hey");
   // }, [todos, status]);
 
+  //! Run once when the app start
+  useEffect(() => {
+    getLocalTodos();
+  }, []);
+
   //! UseEffect
   useEffect(() => {
     filterHandler();
@@ -52,10 +57,16 @@ function App() {
 
   //! Save to Local
   const saveLocalTodos = () => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  };
+  const getLocalTodos = () => {
     if (localStorage.getItem("todos") === null) {
       localStorage.setItem("todos", JSON.stringify([]));
     } else {
-      localStorage.setItem("todos", JSON.stringify(todos));
+      // let todoLocal = localStorage.getItem("todos", JSON.stringify(todos));
+      let todoLocal = JSON.parse(localStorage.getItem("todos"));
+      // console.log(todoLocal)
+      setTodos(todoLocal);
     }
   };
 
