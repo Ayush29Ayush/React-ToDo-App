@@ -1,8 +1,9 @@
 import React from "react";
 
 // const Form = (props) => {
-const Form = ({ inputText, setInputText, todos, setTodos }) => {
+const Form = ({ inputText, setInputText, todos, setTodos, setStatus }) => {
   //! Here I can write javascript code and function
+
   const inputTextHandler = (e) => {
     // console.log("Input just got changed")
     // console.log(e);
@@ -21,6 +22,15 @@ const Form = ({ inputText, setInputText, todos, setTodos }) => {
     //! after submitting , the input form state should go blank again
     setInputText("");
   };
+  const statusHandler = (e) => {
+    // console.log(e)
+    // console.log(e.target)
+    // console.log(e.target.value)
+    setStatus(e.target.value)
+  }
+
+
+
 
   return (
     <form>
@@ -37,7 +47,7 @@ const Form = ({ inputText, setInputText, todos, setTodos }) => {
         <i className="fas fa-plus-square"></i>
       </button>
       <div className="select">
-        <select name="todos" className="filter-todo">
+        <select onChange={statusHandler} name="todos" className="filter-todo">
           <option value="all">All</option>
           <option value="completed">Completed</option>
           <option value="uncompleted">Uncompleted</option>

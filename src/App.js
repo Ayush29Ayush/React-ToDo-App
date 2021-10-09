@@ -9,6 +9,7 @@ function App() {
   // inputText is the actual value typed and setInputText is the function that allows to change the value , you can use the state anywhere in the app , wherever you want you can have it.
   const [inputText, setInputText] = useState("");
   const [todos, setTodos] = useState([]);
+  const [status,setStatus] = useState("all")
 
   return (
     <div className="App">
@@ -27,6 +28,7 @@ function App() {
         todos={todos}
         setTodos={setTodos}
         setInputText={setInputText}
+        setStatus={setStatus}
       />
       <TodoList setTodos={setTodos} todos={todos} />
     </div>
