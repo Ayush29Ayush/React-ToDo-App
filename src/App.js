@@ -24,9 +24,9 @@ function App() {
   // }, [todos, status]);
 
   //! UseEffect
-  useEffect(()=>{
+  useEffect(() => {
     filterHandler();
-  }, [todos,status])
+  }, [todos, status]);
 
   //! Functions and events
   const filterHandler = () => {
@@ -47,6 +47,8 @@ function App() {
     }
   };
 
+  console.log(filteredTodos);
+
   return (
     <div className="App">
       {/* <h1>Hello React</h1>
@@ -66,7 +68,11 @@ function App() {
         setInputText={setInputText}
         setStatus={setStatus}
       />
-      <TodoList setTodos={setTodos} todos={todos} />
+      <TodoList
+        filteredTodos={filteredTodos}
+        setTodos={setTodos}
+        todos={todos}
+      />
     </div>
   );
 }
