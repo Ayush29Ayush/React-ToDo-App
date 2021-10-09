@@ -31,7 +31,11 @@ const Todo = ({ text, todo, todos, setTodos }) => {
   return (
     <div className="todo">
       {/* <li className="todo-item">HEY GUYS</li> */}
-      <li className="todo-item">{text}</li>
+      {/* <li className="todo-item">{text}</li> */}
+      {/* To check the class named "completed" go to css line to understand its functioning */}
+      <li className={`todo-item ${todo.completed ? "completed" : ""}`}>
+        {text}
+      </li>
       <button onClick={completeHandler} className="complete-btn">
         <i className="fas fa-check"></i> Insert
       </button>
