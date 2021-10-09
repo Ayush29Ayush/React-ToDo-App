@@ -32,7 +32,7 @@ const Todo = ({ text, todo, todos, setTodos }) => {
     <div className="todo">
       {/* <li className="todo-item">HEY GUYS</li> */}
       <li className="todo-item">{text}</li>
-      <button className="complete-btn">
+      <button onClick={completeHandler} className="complete-btn">
         <i className="fas fa-check"></i> Insert
       </button>
       <button onClick={deleteHandler} className="trash-btn">
