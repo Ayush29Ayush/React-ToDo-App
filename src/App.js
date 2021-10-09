@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 //! Importing components
 import Form from "./components/Form";
@@ -9,7 +9,38 @@ function App() {
   // inputText is the actual value typed and setInputText is the function that allows to change the value , you can use the state anywhere in the app , wherever you want you can have it.
   const [inputText, setInputText] = useState("");
   const [todos, setTodos] = useState([]);
-  const [status,setStatus] = useState("all")
+  const [status, setStatus] = useState("all");
+  const [filteredTodos, setFilteredTodos] = useState([]);
+
+  //! UseEffect example
+  // //Since we provide [], it will run only once when the app runs first
+  // useEffect(() => {
+  //   console.log("hey");
+  // }, []);
+
+  //Since we provide [todos], we are telling that everytime the todos state changes, run this function
+  useEffect(() => {
+    console.log("hey");
+  }, [todos]);
+
+  //! Functions and events
+  const filterHandler = () => {
+    switch (status) {
+      case "completed":
+        setFilteredTodos(todos.filter((xyztodo) => xyztodo.completed === true));
+        break;
+
+      case "uncompleted":
+        setFilteredTodos(
+          todos.filter((xyztodo) => xyztodo.completed === false)
+        );
+        break;
+
+      default:
+        setFilteredTodos(todos);
+        break;
+    }
+  };
 
   return (
     <div className="App">
